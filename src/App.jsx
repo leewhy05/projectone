@@ -7,6 +7,7 @@ import SingleProduct from './Pages/SingleProduct'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
+
 const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || []
 function App() {
 const [cart, setCart] = useState(cartItemsFromLocalStorage)
@@ -30,7 +31,7 @@ let handleAddToCart = (product)=>{
       <Routes>
        <Route index element={<Home cart={cart} handleAddToCart={handleAddToCart} setCart={setCart} />}/>
         <Route path='/Cart' element={<Cart cart={cart}  setCart={setCart} />}/>
-        <Route path='/SingleProduct/:id' element={<SingleProduct cart={cart}handleAddToCart={handleAddToCart}  setCart={setCart} />}/>
+        <Route path='/SingleProduct/:id' element={<SingleProduct cart={cart} handleAddToCart={handleAddToCart}  setCart={setCart} />}/>  
       </Routes>
       </BrowserRouter>
     </>

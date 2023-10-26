@@ -31,7 +31,7 @@ const NavBar = ({cart}) => {
         <nav className='d-flex'>
            <ul className='d-flex gap-4 list-unstyled justify-content-between align-items-center'>
             <li>
-                <Link className='text-decoration-none text-light fs-4'>
+                <Link className='text-decoration-none text-light fs-4' to='/Form'>
                 Account
                 </Link>
             </li>
