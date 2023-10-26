@@ -4,7 +4,8 @@ import {Link} from "react-router-dom"
 import '../Styles/Navbar.css'
 import { BsCart4 } from 'react-icons/bs';
 
-const NavBar = () => {
+const NavBar = ({cart}) => {
+
   return (
     <div className='sticky-top'>
         <Marque/>
@@ -12,7 +13,7 @@ const NavBar = () => {
     <header className='container d-flex justify-content-between align-items-center'>
         <ul>
             <li className='list-unstyled'>
-                <Link className='text-decoration-none'>
+                <Link to='/' className='text-decoration-none'>
                 <h2 className='fst-italic text-light'>Leewhy</h2>
                 </Link>
             </li>
@@ -40,8 +41,9 @@ const NavBar = () => {
                  </Link>
             </li>
             <li>
-              <Link className='text-decoration-none text-light fs-4'>
+              <Link to='/Cart' className='text-decoration-none text-light fs-4'>
               <BsCart4/>
+              ({cart.length})
               </Link>
             </li>
            </ul> 

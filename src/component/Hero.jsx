@@ -4,8 +4,11 @@ import ClipLoader from "react-spinners/ClipLoader";
 import useFetch from "../customHook/useFetch";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
-const Hero = () => {
+
+const Hero = ({cart,handleAddToCart,setCart}) => {
   const { data: data, loading: loading } = useFetch(
     "https://fakestoreapi.com/products/14"
   );
@@ -13,6 +16,7 @@ const Hero = () => {
   const { data: data2, loading: loading2 } = useFetch(
     "https://fakestoreapi.com/products/category/men's clothing"
   );
+  const notify = () =>{ toast("An item has been added!",{position:toast.POSITION.TOP_CENTER});}
   //console.log(data);
   return (
     <div className="container my-5 hero-container">
@@ -31,12 +35,17 @@ const Hero = () => {
               const { id, title, image, price } = datum2;
               return (
                 <div key={id} className="card-inner h-25 text-center">
-                  <Card style={{ width: "14rem" }}>
-                    <Card.Img variant="top" src={image} className="img-fluid" />
+                  <h2>{loading && <ClipLoader />}</h2>
+                  <Card style={{ width: "" }}>
+                    <Link to={`/SingleProduct/${id}`}>
+                    <Card.Img variant="top" src={image} className="w-75" />
+                    </Link>
+                   
                     <Card.Body>
-                      <Card.Title>{title.slice(0, 12)}</Card.Title>
+                      <Card.Title>{title.slice(0, 5)}</Card.Title>
                       <Card.Text>${price}</Card.Text>
-                      <Button variant="primary">Add to Cart</Button>
+                      <Button variant="primary" className="btn-sm" onClick={()=>{handleAddToCart(datum2);notify()}}>Add to Cart</Button>
+                      <ToastContainer/>
                     </Card.Body>
                   </Card>
                 </div>

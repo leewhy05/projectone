@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import Hero from '../component/Hero'
 
-const Home = () => {
+const Home = ({cart,handleAddToCart, setCart}) => {
     useEffect(()=>{
         document.title = 'Home | Page'
     })
   return (
     <div className='container'>
-        <Hero/>
+        <Hero cart={cart} handleAddToCart={handleAddToCart} setCart={setCart}/>
     </div>
   )
 }
