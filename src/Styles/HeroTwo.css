@@ -1,0 +1,44 @@
+.card-women {
+    display: flex;
+    width: 100%;
+    gap: 20px; 
+  }
+  
+  .card-innerJ {
+    height: 50px;
+    width: 100%; 
+  }
+  
+  .card:hover {
+    /* background-color: brown; */
+    border: none;
+    /* box-shadow: 5px 3px; */
+  }
+  
+  .card-container-img {
+    height: 100px; 
+    width: 100px; 
+    margin: auto;
+  }
+  
+
+  
+  
+ 
+  @media (max-width: 768px) {
+    .card-women {
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      gap: 15rem;
+      grid-column-gap: 3rem;
+  }
+    
+  
+    .card-innerJ {
+      width: 100%; 
+    }
+    
+    .card-container-img {
+      width: 100%; 
+    }
+  }

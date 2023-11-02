@@ -2,10 +2,13 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import Cart from './Pages/Cart'
-import NavBar from './Layout/NavBar'
+import NavBar from './Layout/NavBar'  
 import SingleProduct from './Pages/SingleProduct'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Form from './Pages/Form'
+import Help from './Pages/Help'
+import Footer from './Layout/Footer'
 
 
 const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || []
@@ -31,8 +34,11 @@ let handleAddToCart = (product)=>{
       <Routes>
        <Route index element={<Home cart={cart} handleAddToCart={handleAddToCart} setCart={setCart} />}/>
         <Route path='/Cart' element={<Cart cart={cart}  setCart={setCart} />}/>
+        <Route path='/Form' element={<Form />}/>
+        <Route path='/Help' element={<Help />}/>
         <Route path='/SingleProduct/:id' element={<SingleProduct cart={cart} handleAddToCart={handleAddToCart}  setCart={setCart} />}/>  
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </>
   )

@@ -15,8 +15,8 @@ const Cart = ({cart,setCart}) => {
         )}
       </div>
       <div>
-        {cart.map((singleCart)=>{
-          const {id,image,title,price,quantity,description} =singleCart
+        {cart.map((setCart)=>{
+          const {id,image,title,price,quantity,description} =setCart
           return(
             <div>
               <div key={id}>
@@ -26,6 +26,7 @@ const Cart = ({cart,setCart}) => {
                 <h2> {title} </h2>
                 <div>
                   <h4> {quantity} * {price} </h4>
+                  <h2>{description}</h2>
                   <div>
                     <button className="btn btn-primary">
                       increase

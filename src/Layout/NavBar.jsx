@@ -36,7 +36,7 @@ const NavBar = ({cart}) => {
                 </Link>
             </li>
             <li>
-                 <Link className='text-decoration-none text-light fs-4'>
+                 <Link to='/Help' className='text-decoration-none text-light fs-4'>
                  Help
                  </Link>
             </li>

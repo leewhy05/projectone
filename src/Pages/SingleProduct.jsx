@@ -17,7 +17,6 @@ const SingleProduct = ({cart,handleAddToCart}) => {
           position:toast.POSITION.TOP_CENTER
         });
     }
-    // console.log(data)
   return (
     <div>
         <div className='container'>
@@ -37,9 +36,6 @@ const SingleProduct = ({cart,handleAddToCart}) => {
                 <button onClick={()=>{handleAddToCart(data);notify()}}className="btn btn-primary btn-lg w-50 fs-5">Add Cart</button>
                 <ToastContainer/>
                 </div>
-                
-                
-
             </div>
         </div>
         
