@@ -42,3 +42,9 @@
     color: #666;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow to answers */
   }
+  @media (max-width: 768px){
+    .gen{
+        height: 1100px;
+    }
+
+  }

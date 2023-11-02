@@ -39,7 +39,9 @@
       .footer-content {
         flex-direction: column;
       }
-    
+      .footer{
+        height: 455px;
+      }
       .footer-section {
         flex: none;
         margin: 10px 0;
