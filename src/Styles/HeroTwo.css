@@ -9,12 +9,6 @@
     width: 100%; 
   }
   
-  .card:hover {
-    /* background-color: brown; */
-    border: none;
-    /* box-shadow: 5px 3px; */
-  }
-  
   .card-container-img {
     height: 100px; 
     width: 100px; 
@@ -39,6 +33,6 @@
     }
     
     .card-container-img {
-      width: 100%; 
+      /* width: 100%;  */
     }
   }

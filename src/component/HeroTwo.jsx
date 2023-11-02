@@ -34,7 +34,7 @@ const Jewelry = ({handleAddToCart}) => {
                       <Card.Text>
                         {`${price}`}
                       </Card.Text>
-                      <Button onClick={()=>{handleAddToCart(datum3);notify()}} variant="primary">Add to chart</Button>
+                      <Button className="btn-sm" onClick={()=>{handleAddToCart(datum3);notify()}} variant="primary">Add to chart</Button>
                     </Card.Body>
                   </Card>
                 </div>
