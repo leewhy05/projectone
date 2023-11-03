@@ -11,10 +11,10 @@ import { ToastContainer, toast } from 'react-toastify';
 const Hero = ({cart,handleAddToCart,setCart}) => {
   const { data: data, loading: loading } = useFetch(
     "https://fakestoreapi.com/products/14"
-  );
+  );  
   //console.log(data);
   const { data: data2, loading: loading2 } = useFetch(
-    "https://fakestoreapi.com/products/category/men's clothing"
+    "https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2"
   );
   const notify = () =>{ toast("An item has been added!",{position:toast.POSITION.TOP_CENTER});}
   //console.log(data);
