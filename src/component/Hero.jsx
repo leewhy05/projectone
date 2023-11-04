@@ -14,7 +14,7 @@ const Hero = ({cart,handleAddToCart,setCart}) => {
   );  
   //console.log(data);
   const { data: data2, loading: loading2 } = useFetch(
-    "https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2"
+    "https://fakestoreapi.com/products/category/men's clothing"
   );
   const notify = () =>{ toast("An item has been added!",{position:toast.POSITION.TOP_CENTER});}
   //console.log(data);
@@ -31,7 +31,7 @@ const Hero = ({cart,handleAddToCart,setCart}) => {
         {/* card section */}
         <div className="col-sm-12 col-lg-5 shadow-sm">
           <div className="card-container">
-            {data2.map((datum2) => {
+            {data2.map((datum2)=> {
               const { id, title, image, price } = datum2;
               return (
                 <div key={id} className="card-inner h-25 text-center">
