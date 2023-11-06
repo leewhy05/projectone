@@ -43,7 +43,7 @@ const Hero = ({cart,handleAddToCart,setCart}) => {
                    
                     <Card.Body>
                       <Card.Title>{title.slice(0, 5)}</Card.Title>
-                      <Card.Text>${price}</Card.Text>
+                      <Card.Text className='fw-bold text-danger'>${price}</Card.Text>
                       <Button variant="primary" className="btn-sm" onClick={()=>{handleAddToCart(datum2);notify()}}>Add to Cart</Button>
                       <ToastContainer/>
                     </Card.Body>
