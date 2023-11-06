@@ -14,7 +14,7 @@ const Jewelry = ({ handleAddToCart }) => {
   return (
     <div>
       <div className="component-title mt-4">
-        <h2>Jewelry CATEGORY</h2>
+        <h2>JEWELRY CATEGORY</h2>
       </div>
       <main className="card-container-electronics my-4">
         {data.map((datumJewelry) => {
