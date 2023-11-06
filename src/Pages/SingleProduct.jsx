@@ -4,11 +4,15 @@ import useFetch from '../customHook/useFetch';
 import Card from "react-bootstrap/Card";
 import ClipLoader from "react-spinners/ClipLoader";
 import { ToastContainer, toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 
 
 
 const SingleProduct = ({cart,handleAddToCart}) => {
+  useEffect(()=>{
+    document.title = `Product | ${title}`
+  })
     const {id} = useParams()
     const {data,loading}=useFetch(`https://fakestoreapi.com/products/${id}`)
     const {title,price,image, description}=data
@@ -18,7 +22,7 @@ const SingleProduct = ({cart,handleAddToCart}) => {
         });
     }
   return (
-    <div>np
+    <div>
         <div className='container'>
             <h2>{loading && <ClipLoader color={'red'} size={50}/>}</h2>
 
