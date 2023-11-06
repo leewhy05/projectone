@@ -36,7 +36,7 @@ const SingleProduct = ({cart,handleAddToCart}) => {
                 <div className='col-sm-12 col-md-7'>
                     <h1 className='text-danger fw-bold'>{title}</h1>
                     <h4 className='text-success lh-base'>{description}</h4>
-                    <h3>{price}</h3>
+                    <h3>${price}</h3>
                 <button onClick={()=>{handleAddToCart(data);notify()}}className="btn btn-primary btn-lg w-50 fs-5">Add Cart</button>
                 <ToastContainer/>
                 </div>
