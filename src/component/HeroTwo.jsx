@@ -28,7 +28,7 @@ const Women = ({handleAddToCart}) => {
                     {/* <Card.Img variant="top" src={image}
                     className="w-75" /> */}
                     <Card.Body>
-                      <Card.Title>{title.slice(0,25)}</Card.Title>
+                      <Card.Title>{title.slice(0,22)}</Card.Title>
                       <Card.Text className='fw-bold text-danger'>
                         ${price}
                       </Card.Text>

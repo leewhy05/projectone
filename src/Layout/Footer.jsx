@@ -27,7 +27,7 @@ const Footer = () => {
         })}
       </div>
      </div>
-      <p className='text-center'> Copyright &copy; {copyRightYear} Eggy.com. All rights resverd </p>
+      <p className='text-center'> Copyright &copy; {copyRightYear} Leewhy.com. All rights resverd </p>
       
       
         
