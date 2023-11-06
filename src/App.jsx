@@ -17,16 +17,25 @@ const [cart, setCart] = useState(cartItemsFromLocalStorage)
 useEffect(()=>{
   localStorage.setItem('cart',JSON.stringify(cart))
 },[cart])
-let handleAddToCart = (product)=>{
-  const productSelected = cart.find((singleCart)=>singleCart.id === product.id)
-  if(productSelected){
+let handleAddToCart = (product) => {
+  const productSelected = cart.find(
+    (singleCart) => singleCart.id === product.id
+  );
+  if (productSelected) {
     setCart(
-      cart.map((oneItem)=> oneItem.id === productSelected.id ? {...productSelected,quatity:productSelected.quatity + 1}: oneItem)
-    )
-}else{
-  setCart([...cart, {...productSelected,quantity:1}])
-}
-}
+      cart.map((oneItem) =>
+        oneItem.id === product.id
+          ? {
+              ...productSelected,
+              quantity: productSelected.quantity + 1,
+            }
+          : oneItem
+      )
+    );
+  } else {
+    setCart([...cart, { ...product, quantity: 1 }]);
+  }
+};
   return (
     <>
       <BrowserRouter>

@@ -18,7 +18,7 @@ const SingleProduct = ({cart,handleAddToCart}) => {
         });
     }
   return (
-    <div>
+    <div>np
         <div className='container'>
             <h2>{loading && <ClipLoader color={'red'} size={50}/>}</h2>
 
