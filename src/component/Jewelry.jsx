@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Jewelry = ({ handleAddToCart }) => {
   const { data, loading } = useFetch(
@@ -16,6 +17,7 @@ const Jewelry = ({ handleAddToCart }) => {
       <div className="component-title mt-4">
         <h2>JEWELRY CATEGORY</h2>
       </div>
+      <h2>{loading && <ClipLoader />}</h2>
       <main className="card-container-electronics my-4">
         {data.map((datumJewelry) => {
           const { id, image, price, title } = datumJewelry;
@@ -28,7 +30,7 @@ const Jewelry = ({ handleAddToCart }) => {
                 {/* <Card.Img variant="top" src={image}
                     className="w-75" /> */}
                 <Card.Body>
-                  <Card.Title>{title.slice(0, 25)}</Card.Title>
+                  <Card.Title>{title.slice(0, 20)}</Card.Title>
                   <Card.Text className="fw-bold text-danger">${price}</Card.Text>
                   <Button
                     variant="primary"

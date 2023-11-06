@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Women = ({handleAddToCart}) => {
     const {data,loading} = useFetch("https://fakestoreapi.com/products/category/women's clothing")
@@ -14,6 +15,7 @@ const Women = ({handleAddToCart}) => {
         <div className='component-title mt-5'>
             <h2>WOMEN CATEGORY</h2>
         </div>
+        <h2>{loading && <ClipLoader />}</h2>
         <main className='card-container-women mt-5'>
             {data.map((datumWomen)=>{
                 const {id,image,price,title} = datumWomen
