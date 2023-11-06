@@ -1,48 +1,50 @@
-import useFetch from "../customHook/useFetch";
 import React from 'react'
+import '../Styles/HeroTwo.css'
+import useFetch from "../customHook/useFetch";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import '../Styles/HeroTwo.css'
-import { ToastContainer, toast } from 'react-toastify';
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
-
-
-const Jewelry = ({handleAddToCart}) => {
-    const { data: data3, loading: loading3 } = useFetch(
-        "https://fakestoreapi.com/products/category/women's clothing"
-      );
-    console.log(data3)
-    const notify = () =>{
-      toast("An Item has been added",{
-        position:toast.POSITION.TOP_CENTER
-      });
-  }
+const Women = ({handleAddToCart}) => {
+    const {data,loading} = useFetch("https://fakestoreapi.com/products/category/women's clothing")
+    const notify = () =>{ toast("An item has been added!",{position:toast.POSITION.TOP_CENTER});}
   return (
-    <div className="container mt-3    card-women ">
-        {data3.map((datum3) => {
-              const { id, title, image, price } = datum3;
-              return (
-                <div key={id} className="card-innerJ text-center ">
-                  <Card className="classJ" style={{ width: "" }} >
+    <div>
+        <div className='component-title mt-5'>
+            <h2>WOMEN CATEGORY</h2>
+        </div>
+        <main className='card-container-women mt-5'>
+            {data.map((datumWomen)=>{
+                const {id,image,price,title} = datumWomen
+                return(
+                    <div key={id} className='card-container-data shadow-lg'>
+                         <Card style={{ width: "12rem" }}>
                   <Link to={`/SingleProduct/${id}`}>
-                    <Card.Img variant="top" src={image} className=" card-container-img" />
-                    </Link>
-                    {/* <Card.Img variant="top" src={image} className="w-50 card-container-img" /> */}
-                    <Card.Body className="text-center">
-                      <Card.Title>{title.slice(0,5)}</Card.Title>
-                      <Card.Text>
-                        {`${price}`}
+            <Card.Img variant="top" src={image}
+                    className="w-75 pt-3" />
+            
+            </Link>
+                    {/* <Card.Img variant="top" src={image}
+                    className="w-75" /> */}
+                    <Card.Body>
+                      <Card.Title>{title.slice(0,25)}</Card.Title>
+                      <Card.Text className='fw-bold text-danger'>
+                        ${price}
                       </Card.Text>
-                      <Button className="btn-sm" onClick={()=>{handleAddToCart(datum3);notify()}} variant="primary">Add to chart</Button>
+                      <Button variant='primary' className='btn-sm' onClick={()=>{handleAddToCart(datumWomen);notify()}}  >Add To Cart</Button>
+                      <ToastContainer/>
                     </Card.Body>
                   </Card>
-                </div>
-              );
+
+                    </div>
+                )
             })}
-        
+            {}
+
+        </main>
     </div>
   )
 }
 
-export default Jewelry
+export default Women

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import Hero from '../component/Hero'
 import HeroTwo from '../component/HeroTwo'
 import Electronics from '../component/Electronics'
+import Jewelry from '../component/Jewelry'
+import LastPage from '../component/LastPage'
 
 const Home = ({cart,handleAddToCart, setCart}) => {
     useEffect(()=>{
@@ -10,8 +12,10 @@ const Home = ({cart,handleAddToCart, setCart}) => {
   return (
     <div className='container'>
         <Hero cart={cart} handleAddToCart={handleAddToCart} setCart={setCart}/>
+        <Electronics cart={cart} handleAddToCart={handleAddToCart} setCart={setCart} />
         <HeroTwo cart={cart} handleAddToCart={handleAddToCart} setCart={setCart} />
-        <Electronics/>
+        <Jewelry cart={cart} handleAddToCart={handleAddToCart} setCart={setCart} />
+        <LastPage/>
 
 
     </div>

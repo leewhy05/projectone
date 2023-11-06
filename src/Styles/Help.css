@@ -2,7 +2,7 @@
 
 /*style the general part*/
 .gen{
-    height: 598px;
+    height: 798px;
 }
 
 /* Style the page title */
@@ -44,7 +44,7 @@
   }
   @media (max-width: 768px){
     .gen{
-        height: 1100px;
+        height: 1250px;
     }
 
   }

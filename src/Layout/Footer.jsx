@@ -1,31 +1,38 @@
 import React from 'react'
+import { dataFooter } from '../customHook/FooterDbs'
 import '../Styles/Footer.css'
 
-
-function Footer() {
+const Footer = () => {
+  const copyRightYear = new Date().getFullYear()
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section">
-          <h3>About Us</h3>
-          <p>Your e-commerce site's mission and description go here.</p>
-        </div>
-        <div className="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: odutayoayomide85@gmail.com</p>
-          <p>Phone: +234 8132259126</p>
-        </div>
-        <div className="footer-section">
-          <h3>Follow Us</h3>
-          <p>Stay connected with us on social media.</p>
+    <footer className='mt-5 bg-black text-white'>
+     <div className=''>
+     <div className='container d-md-flex justify-content-between align-items-center p-4'>
+        {dataFooter.map((datumFooter)=>{
+          const{id,title,contact,about,careers,blog} =
+          datumFooter
+          return(
+            <div key={id}>
+              <h2>{title}</h2>  
+              <ul className='list-unstyled lh-lg'>
+                <li>{contact}</li>
+                <li>{about}</li>
+                <li>{careers}</li>
+                <li>{blog}</li>
+              </ul>
+
+            </div>
+          )
+
+        })}
+      </div>
+     </div>
+      <p className='text-center'> Copyright &copy; {copyRightYear} Eggy.com. All rights resverd </p>
+      
+      
         
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Your E-Commerce Store</p>
-      </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

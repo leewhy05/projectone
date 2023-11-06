@@ -1,38 +1,21 @@
-.card-women {
-    display: flex;
-    width: 100%;
-    gap: 20px; 
-  }
-  
-  .card-innerJ {
-    height: 50px;
-    width: 100%; 
-  }
-  
-  .card-container-img {
-    height: 100px; 
-    width: 100px; 
-    margin: auto;
-  }
-  
+.card-container-women{
+  display: flex;
+  gap: 5rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  text-align: center;
+  gap: 4rem;
+  background-color: #D9D9D9;
 
+}
+
+.card-container-data img{
+  height: 150px;
+
+  margin: auto;
+}
   
   
- 
-  @media (max-width: 768px) {
-    .card-women {
-      display: grid;
-      grid-template-columns: 1fr 1fr; 
-      gap: 15rem;
-      grid-column-gap: 3rem;
-  }
-    
-  
-    .card-innerJ {
-      width: 100%; 
-    }
-    
-    .card-container-img {
-      /* width: 100%;  */
-    }
-  }
