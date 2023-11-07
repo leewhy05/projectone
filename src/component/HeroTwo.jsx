@@ -6,8 +6,12 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import ClipLoader from "react-spinners/ClipLoader";
+import CartContext from "../context/CartContext";
+import { useContext } from 'react';
 
-const Women = ({handleAddToCart}) => {
+const Women = () => {
+  // const {handleAddToCart} = useContext(CartContext)
+  const {handleAddToCart} = useContext(CartContext)
     const {data,loading} = useFetch("https://fakestoreapi.com/products/category/women's clothing")
     const notify = () =>{ toast("An item has been added!",{position:toast.POSITION.TOP_CENTER});}
   return (

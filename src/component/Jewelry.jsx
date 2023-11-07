@@ -6,8 +6,13 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import ClipLoader from "react-spinners/ClipLoader";
+import CartContext from "../context/CartContext";
+import { useContext } from 'react';
 
-const Jewelry = ({ handleAddToCart }) => {
+
+const Jewelry = () => {
+  // const {handleAddToCart} = useContext(CartContext)
+  const {handleAddToCart} = useContext(CartContext)
   const { data, loading } = useFetch(
     "https://fakestoreapi.com/products/category/jewelery"
   );

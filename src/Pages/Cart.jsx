@@ -1,47 +1,14 @@
 import React, { useEffect } from 'react';
+import CartContext from "../context/CartContext";
+import { useContext } from 'react';
+
 // import Card from "react-bootstrap/Card";
 
-const Cart = ({cart,setCart}) => {
+const Cart = () => {
+  const {cart, setCart,handleIncrease,handleDecrease,totalPrice } = useContext(CartContext)
   useEffect(()=>{
     document.title = 'Cart | Page'
   })
-  // function below is for handleIncrease for d cart section
-  function handleIncrease(product) {
-    const productSelected = cart.find(
-      (singleCartItem) => singleCartItem.id === product.id
-    )
-    if (productSelected) {
-      setCart(
-        cart.map((oneItem) =>
-          oneItem.id === product.id
-            ? { ...productSelected, quantity: productSelected.quantity + 1 }
-            : oneItem
-        )
-      )
-    }
-  }
-  // function below is for handleDecrease for d cart section
-  function handleDecrease(product) {
-    const productSelected = cart.find(
-      (singleCartItem) => singleCartItem.id === product.id
-    )
-    if (productSelected.quantity === 1) {
-      setCart(cart.filter((oneItem) => oneItem.id !== product.id))
-    } else {
-      setCart(
-        cart.map((dd) =>
-          dd.id === product.id
-            ? { ...productSelected, quantity: productSelected.quantity - 1 }
-            : dd
-        )
-      )
-    }
-  }
-  // reduce ftn for d cart section
-  const totalPrice = cart.reduce(
-    (price, item) => price + item.quantity * item.price,
-    0
-  )
   return (
     <div className='container'>
      <div>
