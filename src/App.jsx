@@ -53,6 +53,14 @@ function App() {
             path="/Cart"
             element={<Cart />}
           />
+          <Route
+            path="/Form"
+            element={<Form />}
+          />
+          <Route
+            path="/Help"
+            element={<Help />}
+          />
 
           <Route
             path="/SingleProduct/:id"
